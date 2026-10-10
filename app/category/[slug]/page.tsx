@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { categories, getPostsByCategory, getPostBySlug } from '@/lib/data';
+import { categories, getPostsByCategory } from '@/lib/data';
 
 export default function CategoryPage({ params }: { params: { slug: string } }) {
   const items = getPostsByCategory(params.slug);

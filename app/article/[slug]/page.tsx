@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getPostsByCategory, categories } from '@/lib/data';
+import { categories, getPostBySlug, getPostsByCategory, getPostsByTag, posts } from '@/lib/data';
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
@@ -9,9 +9,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  const related = categories
-    .map((category) => category.slug)
-    .filter((slug) => slug !== post.category.toLowerCase())
+  const related = posts
+    .filter((item) => item.slug !== post.slug)
+    .filter((item) => item.category === post.category || item.tags.some((tag) => post.tags.includes(tag)))
     .slice(0, 3);
 
   return (
@@ -61,11 +61,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="mt-12 border-t border-slate-200 pt-8">
           <h2 className="mb-6 text-2xl font-black tracking-tight text-slate-900">More from the report</h2>
           <div className="grid gap-6 md:grid-cols-3">
-            {related.map((slug) => (
-              <div key={slug} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-700">{slug}</p>
-                <p className="mt-3 text-lg font-bold text-slate-900">Fresh reporting and analysis from the region.</p>
-              </div>
+            {related.map((item) => (
+              <Link key={item.slug} href={`/article/${item.slug}`} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:border-brand-200">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-700">{item.category}</p>
+                <h3 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.excerpt}</p>
+              </Link>
             ))}
           </div>
         </div>
