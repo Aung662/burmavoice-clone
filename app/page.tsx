@@ -11,7 +11,7 @@ export default function HomePage() {
   const quickReads = posts.slice(0, 3);
 
   return (
-    <div className="bg-[#f6f2ee] text-slate-900">
+    <div className="bg-[#f3efe9] text-slate-900 antialiased">
       <Header />
 
       <main>
