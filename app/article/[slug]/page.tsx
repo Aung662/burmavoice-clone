@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { categories, getPostBySlug, getPostsByCategory, getPostsByTag, posts } from '@/lib/data';
+import { categories, getPostBySlug, posts } from '@/lib/data';
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
@@ -32,7 +32,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       </header>
 
       <main className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mb-6 inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-700">
+        <div className="mb-6 inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-700">
           {post.category}
         </div>
 
@@ -62,8 +62,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <h2 className="mb-6 text-2xl font-black tracking-tight text-slate-900">More from the report</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {related.map((item) => (
-              <Link key={item.slug} href={`/article/${item.slug}`} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:border-brand-200">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-700">{item.category}</p>
+              <Link key={item.slug} href={`/article/${item.slug}`} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:border-red-200">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-700">{item.category}</p>
                 <h3 className="mt-3 text-lg font-bold text-slate-900">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">{item.excerpt}</p>
               </Link>

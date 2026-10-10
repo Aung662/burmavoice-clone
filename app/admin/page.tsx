@@ -36,7 +36,7 @@ export default function AdminPage() {
               {['Labor market rebound', 'Regional transit expansion', 'Arts festival returns'].map((story) => (
                 <div key={story} className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 p-4">
                   <span className="font-semibold text-slate-800">{story}</span>
-                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">Live</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Live</span>
                 </div>
               ))}
             </div>
@@ -48,7 +48,7 @@ export default function AdminPage() {
               {categories.map((category) => (
                 <li key={category.slug} className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700">
                   <span>{category.name}</span>
-                  <span className="rounded-full bg-brand-100 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-brand-700">active</span>
+                  <span className="rounded-full bg-red-100 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-red-700">active</span>
                 </li>
               ))}
             </ul>

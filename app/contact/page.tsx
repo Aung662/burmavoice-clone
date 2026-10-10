@@ -28,7 +28,7 @@ export default function ContactPage() {
             <label className="mb-2 block text-sm font-semibold text-slate-700">Message</label>
             <textarea rows={6} className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2" placeholder="Tell us what you are working on" />
           </div>
-          <button className="mt-6 rounded-full bg-brand-700 px-6 py-3 font-semibold text-white hover:bg-brand-800">
+          <button className="mt-6 rounded-full bg-red-700 px-6 py-3 font-semibold text-white hover:bg-red-800">
             Send message
           </button>
         </div>

@@ -7,7 +7,7 @@ import { ArticleCard } from '@/components/article-card';
 
 export default function HomePage() {
   const topStories = posts.slice(0, 4);
-  const latest = posts.slice(4, 9);
+  const latest = posts.slice(4, 8);
   const quickReads = posts.slice(0, 3);
 
   return (

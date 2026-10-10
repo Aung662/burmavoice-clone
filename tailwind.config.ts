@@ -21,14 +21,9 @@ const config: Config = {
           800: '#9f1239',
           900: '#881337',
         },
-        ink: '#111827',
-        soft: '#f3f4f6',
       },
       boxShadow: {
-        soft: '0 10px 30px rgba(15, 23, 42, 0.08)',
-      },
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        soft: '0 12px 28px rgba(15, 23, 42, 0.08)',
       },
     },
   },

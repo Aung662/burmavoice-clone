@@ -24,10 +24,10 @@ export default function SearchPage() {
           <h2 className="mb-6 text-2xl font-black tracking-tight text-slate-900">Popular stories</h2>
           <div className="space-y-4">
             {recent.map((post) => (
-              <Link key={post.slug} href={`/article/${post.slug}`} className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:border-brand-200">
+              <Link key={post.slug} href={`/article/${post.slug}`} className="block rounded-2xl border border-slate-200 bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:border-red-200">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-700">{post.category}</p>
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-700">{post.category}</p>
                     <h3 className="mt-2 text-xl font-black text-slate-900">{post.title}</h3>
                   </div>
                   <span className="text-sm text-slate-500">{post.date}</span>

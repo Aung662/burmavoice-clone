@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #f5f1eb;
+  background: #f6f2ee;
   color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -24,11 +24,11 @@ img {
 }
 
 ::selection {
-  background: rgba(220, 38, 127, 0.18);
+  background: rgba(190, 18, 60, 0.18);
 }
 
 .article-body p {
-  margin: 1rem 0;
+  margin: 1.2rem 0;
   line-height: 1.9;
   color: #334155;
 }
@@ -51,7 +51,7 @@ img {
   margin: 2rem 0;
   border-left: 4px solid #dc2626;
   padding-left: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1f2937;
 }

@@ -30,7 +30,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 border-b border-slate-200 pb-4">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-700">Section</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-700">Section</p>
           <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-900">{category}</h1>
         </div>
 
@@ -39,11 +39,11 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
             <article key={post.slug} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
               <img src={post.coverImage} alt={post.title} className="h-52 w-full object-cover" />
               <div className="p-5">
-                <div className="mb-3 inline-flex rounded-full bg-brand-50 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-brand-700">
+                <div className="mb-3 inline-flex rounded-full bg-red-50 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-red-700">
                   {post.category}
                 </div>
                 <h2 className="text-2xl font-black tracking-tight text-slate-900">
-                  <Link href={`/article/${post.slug}`} className="hover:text-brand-700">
+                  <Link href={`/article/${post.slug}`} className="hover:text-red-700">
                     {post.title}
                   </Link>
                 </h2>
