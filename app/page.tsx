@@ -7,28 +7,28 @@ import { ArticleCard } from '@/components/article-card';
 
 export default function HomePage() {
   const topStories = posts.slice(0, 4);
-  const latest = posts.slice(4, 8);
-  const spotlight = posts.slice(0, 3);
+  const latest = posts.slice(4, 9);
+  const quickReads = posts.slice(0, 3);
 
   return (
-    <div className="bg-[#f5f1eb] text-slate-900">
+    <div className="bg-[#f6f2ee] text-slate-900">
       <Header />
 
       <main>
         <HeroSection post={featuredPost} />
 
-        <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <div className="mb-5 flex items-center justify-between gap-4 border-b border-slate-300 pb-3">
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mb-6 flex items-center justify-between border-b border-slate-300 pb-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-brand-700">Latest dispatch</p>
-              <h2 className="text-3xl font-black tracking-tight text-slate-900">Top stories</h2>
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-red-700">Live report</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Top stories</h2>
             </div>
-            <Link href="/search" className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700 hover:text-brand-700">
-              More stories
+            <Link href="/search" className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition hover:text-red-700">
+              View all
             </Link>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-[1.6fr_0.85fr]">
+          <div className="grid gap-6 lg:grid-cols-[1.7fr_0.85fr]">
             <div className="grid gap-6 md:grid-cols-2">
               {topStories.map((post) => (
                 <ArticleCard key={post.slug} post={post} />
@@ -38,13 +38,16 @@ export default function HomePage() {
             <aside className="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
               <div className="mb-4 flex items-center justify-between border-b border-slate-200 pb-3">
                 <h3 className="text-xl font-black tracking-tight text-slate-900">Breaking</h3>
-                <span className="rounded-full bg-red-100 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-red-700">Live</span>
+                <span className="rounded-full bg-red-100 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-red-700">
+                  Live
+                </span>
               </div>
+
               <div className="space-y-4">
-                {spotlight.map((post) => (
+                {quickReads.map((post) => (
                   <Link key={post.slug} href={`/article/${post.slug}`} className="block border-b border-slate-100 pb-3 last:border-0 last:pb-0">
                     <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.22em] text-slate-500">{post.category}</p>
-                    <h4 className="text-lg font-black leading-snug text-slate-900 hover:text-brand-700">{post.title}</h4>
+                    <h4 className="text-lg font-black leading-tight text-slate-900 transition hover:text-red-700">{post.title}</h4>
                   </Link>
                 ))}
               </div>
@@ -55,8 +58,11 @@ export default function HomePage() {
         <section className="bg-[#111827] text-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <div className="mb-8 flex items-center justify-between border-b border-slate-700 pb-4">
-              <h2 className="text-3xl font-black tracking-tight">Sections</h2>
-              <span className="text-xs font-bold uppercase tracking-[0.28em] text-slate-400">Reportage</span>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400">Coverage</p>
+                <h2 className="mt-2 text-3xl font-black tracking-tight">Sections</h2>
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-slate-400">Reportage</span>
             </div>
 
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -79,8 +85,11 @@ export default function HomePage() {
 
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="mb-7 flex items-center justify-between border-b border-slate-300 pb-3">
-            <h2 className="text-3xl font-black tracking-tight text-slate-900">Latest analysis</h2>
-            <Link href="/search" className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700 hover:text-brand-700">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-red-700">Analysis</p>
+              <h2 className="mt-2 text-3xl font-black tracking-tight text-slate-900">Latest analysis</h2>
+            </div>
+            <Link href="/search" className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-700 transition hover:text-red-700">
               Archive
             </Link>
           </div>
